@@ -1,7 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+# Author : Sri Aditya Dosapati 
+# Purpose : Function created as a part of course assingment on Coursera 
+# The Following function creates
+# a special function Matrix object
+# the solve function can cache its inverse when necessary
+# Programming Assignment 2
 
-## Write a short comment describing this function
+
+# Function for creating a special function that could be used for caching the response for evaluating matrix inverse
 
 makeCacheMatrix <- function(x = matrix()) {
 
@@ -10,6 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     inv <<- NULL
   }
+  #Create the components for the matrix
   get <- function() x
   setinverse <- function(invers) inv <<- invers
   getinverse <- function() inv
@@ -20,11 +26,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+# Function for evaluating  the inverse of the matrix that is returned by function makeCacheMatrix 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  
+  # Compute the inverse of the matrix and cache any relevant responses 
   inv <- x$getinverse()
   if(!is.null(inv)) {
     message("getting cached data")
